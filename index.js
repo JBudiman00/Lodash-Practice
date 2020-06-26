@@ -1,101 +1,92 @@
 "use strict";
 exports.__esModule = true;
 var _ = require("lodash");
-/*let array = [{name: 'John'}, {name: 'Mary'}, {name: 'Joe'}, {name: 'Ben'}];
+//1st Exercise
+var array = [{ name: 'John' }, { name: 'Mary' }, { name: 'Joe' }, { name: 'Ben' }];
 console.log(_.size(array));
 console.log(_.each(array));
-
-var opinions = [ "This is the best job ever",
-                 "Satisfied",
-                 "At least I get paid",
-                 "I'm looking for another job",
-                 "I don't want to answer"];
-
- function emp(){
-    let arr = [];
-    let arrTotal = [];
-    for (let x = 0; x < 5; x++){
-        _.times(10, () => {arr.push(_.sample(opinions))});
+var opinions = ["This is the best job ever",
+    "Satisfied",
+    "At least I get paid",
+    "I'm looking for another job",
+    "I don't want to answer"];
+function emp() {
+    var arr = [];
+    var arrTotal = [];
+    for (var x = 0; x < 5; x++) {
+        _.times(10, function () { arr.push(_.sample(opinions)); });
         arrTotal.push(arr);
-        arr=[];
+        arr = [];
     }
     return arrTotal;
-};
-
+}
+;
 var employeeSatisfaction = emp();
 console.log(employeeSatisfaction);
-
+//2nd Exercise Arrays
 var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
-                  "Ron Weasley", "1 March", "Remus Lupin", "10 March",
-                  "Fred & George Weasley", "1 April", "Pomona Sprout", "15 May",
-                   "Draco Malfoy", "5 June", "Dobby", "28 June",
-                   "Neville Longbottom", "30 July", "Harry Potter", "31 July",
-                   "Ginevra Weasley", "11 August", "Percy Weasley ", "22 August",
-                   "Hermione Granger", "19 September", "Minerva McGonagall",
-                   "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
-                   "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
-                   "6 December", "Charlie Weasley", "12 December"];
-
+    "Ron Weasley", "1 March", "Remus Lupin", "10 March",
+    "Fred & George Weasley", "1 April", "Pomona Sprout", "15 May",
+    "Draco Malfoy", "5 June", "Dobby", "28 June",
+    "Neville Longbottom", "30 July", "Harry Potter", "31 July",
+    "Ginevra Weasley", "11 August", "Percy Weasley ", "22 August",
+    "Hermione Granger", "19 September", "Minerva McGonagall",
+    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
+    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
+    "6 December", "Charlie Weasley", "12 December"];
 var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
-                     "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
-
-function setBirthdays(){
-    let birthdayChunk = _.chunk(birthdays, 2);
+    "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
+function setBirthdays() {
+    var birthdayChunk = _.chunk(birthdays, 2);
     return birthdayChunk;
 }
-
-
-function addBirthdays(birthdayChunk, moreBirths){
-    let birth = _.chunk(moreBirths, 2);
-    let totalBirthdays= _.concat(birthdayChunk, birth);
+function addBirthdays(birthdayChunk, moreBirths) {
+    var birth = _.chunk(moreBirths, 2);
+    var totalBirthdays = _.concat(birthdayChunk, birth);
     return totalBirthdays;
 }
-
-let bd = addBirthdays(setBirthdays(), moreBirthdays);
-
+var bd = addBirthdays(setBirthdays(), moreBirthdays);
 console.log(bd);
-
-function difChar(pw: string){
-    let temp = [];
-    let isDiff = false;
-    for (let x = 0; x < pw.length; x++){
-        _.times(temp.length, e => {
-            if (temp[e] === pw.charAt(x)){
+//3rd Exercise
+function difChar(pw) {
+    var temp = [];
+    var isDiff = false;
+    var _loop_1 = function (x) {
+        _.times(temp.length, function (e) {
+            if (temp[e] === pw.charAt(x)) {
                 isDiff = true;
             }
-        })
+        });
         temp.push(pw.charAt(x));
+    };
+    for (var x = 0; x < pw.length; x++) {
+        _loop_1(x);
     }
     return isDiff;
 }
-
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 console.log(difChar(goodPsswd));
 console.log(difChar(badPsswd));
-
-function hasChar(pw: string){   //Return true if has Char
-    let isChar = false;
-    _.times(pw.length, e=>{
-        if(isNaN(Number(pw.charAt(e))))
+function hasChar(pw) {
+    var isChar = false;
+    _.times(pw.length, function (e) {
+        if (isNaN(Number(pw.charAt(e))))
             isChar = true;
-    })
+    });
     return isChar;
 }
-
 goodPsswd = "1234567890";
 badPsswd = "1a234567890";
-
 console.log(hasChar(goodPsswd));
 console.log(hasChar(badPsswd));
-
 goodPsswd = "1234567890";
 badPsswd = "12345678901234567890";
-
 var trimPassword = function (password) {
     console.log(password.substring(0, 10));
-}
-trimPassword(badPsswd);*/
+};
+trimPassword(badPsswd);
+//4th Exercise Array, approximately 900 lines long
 var abbeyRoadRecords = [{ song: "Land of Hope and Glory",
         artist: "Sir Edward Elgar",
         month: 11,
@@ -1009,6 +1000,7 @@ var abbeyRoadRecords = [{ song: "Land of Hope and Glory",
     { song: "Love Divine III",
         artist: "Jan Mulder with The Royal Philharmonic Orchestra",
         year: 2016 }];
+//4th Exercise
 var ArtistCount = /** @class */ (function () {
     function ArtistCount(aP, num) {
         this.artistName = aP;
@@ -1040,15 +1032,6 @@ function novemberArtist() {
         ct++;
     });
     var highTotal = [new ArtistCount("Dummy", -1)];
-    /*arrArtist.forEach(b => {
-        if (b.count == highTotal[0].count){
-            highTotal.push(b);
-        }
-        else if (b.count > highTotal[0].count){
-            highTotal = [];
-            highTotal.push(b);
-        }
-    })*/
     console.log(getHighest(arrArtist, highTotal));
 }
 function getHighest(array, highTotal) {
@@ -1112,7 +1095,7 @@ function lastSixties() {
     });
     return artist60s;
 }
-//novemberArtist();
-//recordArtist();
+novemberArtist();
+recordArtist();
 console.log(lastBeatlesSong());
 console.log(lastSixties());

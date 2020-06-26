@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 
-/*let array = [{name: 'John'}, {name: 'Mary'}, {name: 'Joe'}, {name: 'Ben'}];
+
+//1st Exercise
+let array = [{name: 'John'}, {name: 'Mary'}, {name: 'Joe'}, {name: 'Ben'}];
 console.log(_.size(array));
 console.log(_.each(array));
 
@@ -24,6 +26,7 @@ var opinions = [ "This is the best job ever",
 var employeeSatisfaction = emp();
 console.log(employeeSatisfaction);
 
+//2nd Exercise Arrays
 var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
                   "Ron Weasley", "1 March", "Remus Lupin", "10 March",
                   "Fred & George Weasley", "1 April", "Pomona Sprout", "15 May",
@@ -54,6 +57,8 @@ let bd = addBirthdays(setBirthdays(), moreBirthdays);
 
 console.log(bd);
 
+
+//3rd Exercise
 function difChar(pw: string){
     let temp = [];
     let isDiff = false;
@@ -94,9 +99,10 @@ badPsswd = "12345678901234567890";
 var trimPassword = function (password) {
     console.log(password.substring(0, 10));
 }
-trimPassword(badPsswd);*/
+trimPassword(badPsswd);
 
 
+//4th Exercise Array, approximately 900 lines long
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -1011,6 +1017,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
 
+//4th Exercise
 class ArtistCount{
     artistName: string;
     count: number;
@@ -1049,16 +1056,6 @@ function novemberArtist(){
     });
 
     var highTotal: ArtistCount[] = [new ArtistCount("Dummy", -1)];
-    /*arrArtist.forEach(b => {
-        if (b.count == highTotal[0].count){
-            highTotal.push(b);
-        }
-        else if (b.count > highTotal[0].count){
-            highTotal = [];
-            highTotal.push(b);
-        }
-    })*/
-
     console.log(getHighest(arrArtist, highTotal));
 }
 
@@ -1133,7 +1130,7 @@ function lastSixties() {
     return artist60s;
 }
 
-//novemberArtist();
-//recordArtist();
+novemberArtist();
+recordArtist();
 console.log(lastBeatlesSong());
 console.log(lastSixties());
